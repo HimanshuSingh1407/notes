@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="loading_img" src="https://media2.giphy.com/media/l3nWhI38IWDofyDrW/giphy.gif?cid=790b7611a7b61800ce32bb06bf4663aabb33cb0667e24b5f&rid=giphy.gif&ct=g" alt="">
+</body>
+</html>
+
+<script>
+
+
+//Promise---------------------->>>>>>>>
+
+//1. Pending state
+//2. Completed
+//3. rejected
+
+//TIME
+
+//Promise() //function
+
+//new Promise()//constructor function
+
+//let p = new Promise(function(resolve, reject){});
+
+//function
+//resolve and reject as argument to that function
+
+//console.log("p:" , p);
+
+
+//<<<<<<<<<-------------WE Session 1st---------------->>>>>>>>>>>>>
+
+
+//when content load after some time we remove the image
+// then we show a new image
+
+let image = document.querySelector("#loading_img")
+
+function checkContent(){
+    
+//checking content topic
+//return true;
+return true;
+
+}
+
+let content_promise = new Promise(function(resolve, reject){
+
+//if content is loaded, resolved
+//if content is not loaded, reject
+
+let content = checkContent();
+
+setTimeout(function(){
+
+    if(content===true)
+{ 
+//promise is resolved    
+
+resolve("Content is loaded");
+
+}
+else
+{
+//promise is rejected
+
+reject("Content failed to load");
+
+}
+}, 3000);
+
+});
+
+
+console.log("content_promise:", content_promise)
+
+//is it time to grab the promise value?
+//how -  .then and .catch
+
+//.then--grab resolved value
+//.catch-- grab rejected value
+
+
+content_promise.then(function(value){
+
+//console.log("value:", value)
+
+image.src = "https://media2.giphy.com/media/Q81NcsY6YxK7jxnr4v/giphy.gif?cid=790b761173db09eb3f787024e189bccf6e1408b643dd0c58&rid=giphy.gif&ct=g"
+
+});
+
+content_promise.catch(function(err){
+
+console.log("err:", err)
+
+image.src = "https://media2.giphy.com/media/kEtm4mSTbxvH7j3uCu/giphy.gif?cid=790b76118b2a37d9cd142a762f0d100ace67b6dd885b1604&rid=giphy.gif&ct=g"
+});
+
+
+
+
+
+
+
+
+                                             
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

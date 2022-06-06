@@ -1,0 +1,29 @@
+input{
+    margin-top: 10px;;
+}
+button{
+    margin-top: 10px;;
+}
+#append{
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    /* border: 1px solid green; */
+}
+img{
+    width: 100%;
+}
+#id>h2{
+    position: absolute;
+    margin-right: 100px;
+}
+#id>p{
+    position: relative;
+    top: 10px;
+}
+#id{
+    width: 95%;
+    margin: auto;
+    display: flex;
+    justify-content: end;
+}

@@ -1,0 +1,36 @@
+body{
+  background-image: url("https://media3.giphy.com/media/FlodpfQUBSp20/giphy.gif");
+
+}
+
+#container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: transparent;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 100;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#query{
+  width: 30%;
+  padding: 10px;
+  border-radius: 15px;
+}
+
+#results{
+  /* border: 1px solid white; */
+  width: 30%;
+  height: 200px;
+  /* overflow: scroll; */
+}
+
+p{
+  color: white;
+}

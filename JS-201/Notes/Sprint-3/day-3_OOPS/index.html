@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS</title>
+</head>
+<body>
+    <h1>OOPS</h1>
+</body>
+</html>
+
+<script>
+
+//Object oriented programming
+// object
+
+/*
+three ways to create objects
+
+1. let obj = {}  //object literal
+2. Object.create()
+3. constructor function
+4. Classes
+*/
+
+//create a login/signup system
+
+//User
+//Admin
+//Author
+
+
+
+//Functinalities
+//1. User can signup--checkUsername, checkPassword
+//2. user can login
+
+//1. encapsulation - 
+
+class User{
+    #password;
+    constructor(name){
+        this.name = name;
+    }
+
+    #validateUsername(userName){
+
+    //validating userName through if else
+//by default, we are simulating all usernames are correct
+    return true;
+    }
+
+    #validatePassword(password){
+//validating password through if else
+//by default, we are simulating all passwords are correct
+
+return true;
+    }
+
+signUp(userName, password){
+
+    let isValidated = false
+
+    //when user inputs valid username and password
+
+    isValidated = this.#validateUsername(userName) && this.#validatePassword(password)
+
+    if(isValidated){
+
+        this.userName = userName;
+        this.password = password;
+
+        console.log('user signed up successfully')
+    }
+    else{
+        console.log('signup failure')
+    }
+    //isValidated = true && true
+}
+
+login(userName, password){
+
+if(userName===this.userName && password===this.#password)
+{
+    console.log('logged in sussecfully')
+}
+else{
+    console.log('authentication failed')
+}
+}
+
+    // changePassword(newPassword){
+    //     this.#password = newPassword;
+    // }
+
+    set password(newPassword){
+        this.#password = newPassword;
+    }
+
+    get getName(){
+        return this.name
+    }
+}
+
+let u1 = new User("pablo")
+//console.log(u1)
+
+//clicked on button
+
+// u1.signUp('real_pablo_official_7', 'pablo123');
+
+// u1.login('real_pablo_official_7', 'pablo123');
+
+//Author
+
+class Author extends User{
+    constructor(name){
+        super(name);
+    }
+}
+
+// let a1 = new Author('vivekanand');
+// a1.signUp('vivekanand', 'vivekanand123');
+// console.log(a1)
+
+//admin
+
+class Admin extends User{
+    constructor(name){
+        super(name)
+
+    }
+}
+
+
+let admin1 = new Admin('babu bhaiyaa')
+
+admin1.signUp('paisahipaisa', 'khopodi_tod');
+admin1.login('paisahipaisa', 'khopodi_tod');
+
+//change of password
+
+//admin1.changePassword('are ja re tu ja re')
+
+admin1.password = 'are ja re tu ja re' //only for geter, seter
+console.log(admin1)
+
+console.log(admin1.getName)
+
+
+
+
+</script>
+

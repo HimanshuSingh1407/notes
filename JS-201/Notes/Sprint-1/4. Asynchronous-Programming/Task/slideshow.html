@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>slideshow</h1> -->
+
+    <button onclick="start()">Start</button>
+
+    <button onclick="pause()">Pause</button>
+
+    <div id="container"></div>
+
+
+</body>
+</html>
+
+<script>
+    
+    let i=0
+
+    let id;
+
+function start(){
+
+    let images = JSON.parse(localStorage.getItem("images"))
+
+    let container = document.querySelector("#container")
+
+    //3 seconds
+    //arr[0]
+    //arr[1]
+    //arr[2]
+
+    //solve the deadzone
+    //image[0]
+    //appenf it
+    //3 sec
+
+
+    //i=i+1;   increment so you dont see the images[0] again
+
+   id =  setInterval(function(){
+
+        if(i===images.length){
+            i=0
+        }
+
+        container.innerHTML = null;
+        //acessing the image url
+        let image = images[i]  //images[0]
+        console.log("i", i)
+
+        //append the image
+
+        let img = document.createElement("img")
+        img.src = image;
+
+        container.append(img)
+
+        i++;
+
+    },3000);
+
+}
+
+function pause(){
+
+    clearInterval(id)
+}
+
+
+
+
+
+</script>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container{
+            width: 90%;
+            height: 150px;;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            grid-template-rows: repeat(auto);
+            gap: 20px;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container"></div>
+</body>
+</html>
+
+<script>
+//API :--- application programming interface
+
+/*
+1. Fulfilled  //give us the data
+2. Pending  //delay /take time
+3. Rejected //may reject our request
+
+*/
+
+//let x=fetch()  //it will take time //promise
+//console.log(x)
+
+//reqres.in for API like---youtube API, google API, facebook API, twitter API
+
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+
+const url = "https://reqres.in/api/users";  //Destination is url
+
+//fetch(Destination)------>tool
+
+//1st Method
+
+// fetch(url).then(function (res){
+//     //console.log(res);
+//     return res.json();  //res.collect()
+// })
+// .then(function(res){
+//     console.log(res.data);
+// })
+// .catch(function(err){
+//     console.log(err);
+// });
+
+// Readable + Stream-->(data in chunks) 
+// collect the stream
+
+//<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>//
+//2nd Method
+//Async Await
+
+// async function getData(){
+//     try{
+//         let res = await fetch(url);
+
+//         let users = await res.json();
+
+//         append(users.data);
+
+//         console.log(users.data)
+
+//     } catch (err) {
+//         console.log(err);
+//     }
+// }
+
+// getData();
+
+// function append(data){
+//     let container = document.getElementById("container")
+//     data.forEach(function(ele){
+
+//         let image = document.createElement("img");
+//         image.src = ele.avatar;
+
+//         let h2 = document.createElement("h2")
+//         h2.innerText = ele.first_name;
+
+//         let p = document.createElement("p");
+//         p.innerText = ele.email;
+
+//         let div = document.createElement("div");
+
+//         div.append(image, h2, p);
+//         container.append(div);
+//     })
+// }
+
+
+//----------------------------------------------------//
+
+const url2 = "https://fakestoreapi.com/products";
+
+async function getData(){
+    try{
+        let res = await fetch(url2);
+
+        let products = await res.json();  //collect data
+
+        append(products);
+
+        console.log(products)
+
+    } catch (err) {
+        console.log(err);
+    }
+}
+getData();
+
+function append(data){
+    let container = document.getElementById("container")
+    data.forEach(function(ele){
+
+        let image = document.createElement("img");
+        image.src = ele.image;
+
+        let h2 = document.createElement("h2")
+        h2.innerText = ele.title;
+
+        let p = document.createElement("p");
+        p.innerText = ele.description;
+
+        let div = document.createElement("div");
+
+        div.append(image, h2, p);
+        container.append(div);
+    })
+}
+
+
+
+
+</script>

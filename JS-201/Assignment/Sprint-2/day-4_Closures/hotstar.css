@@ -1,0 +1,40 @@
+body{
+    background-color:aliceblue ;
+}
+
+#navbar{
+    margin: auto;
+    /* border: 1px solid black; */
+    text-align: center;
+}
+
+input{
+    width: 200px;
+}
+#movies{
+    height: 200px;
+    width:206px ;
+    border: 1px solid black;
+    border-top: none;
+    overflow: scroll;
+    cursor: pointer;
+    background-color:darkslategray;
+    color: white;
+}
+
+#details{
+    /* border: 1px solid red; */
+    width: 25%;
+    height: auto;
+    margin: auto;
+    margin-top: -220px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    background-color: rgb(230, 185, 185);
+}
+
+img{
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}

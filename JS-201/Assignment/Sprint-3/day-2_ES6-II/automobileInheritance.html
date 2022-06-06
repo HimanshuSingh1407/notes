@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOMOBILE INHERITANCE MODEL</title>
+</head>
+<body>
+    <h1>AUTOMOBILE INHERITANCE MODEL</h1>
+</body>
+</html>
+
+<script>
+
+class Automobile{
+    constructor(br, t, s, b, h, e, g, ty){
+        this.brand = br;
+        this.tyre = t;
+        this.steering = s;
+        this.break = 4;
+        this.headlight = 2;
+        this.engin = 1;
+        this.gearbox = 1;
+        this.type = ty;
+    }
+}
+
+let vehical1 = new Automobile("Tata Motors", 4, 1, 4, 2, 1, "Hachback")
+console.log(vehical1)
+
+
+class Sedancar extends Automobile{
+    constructor(br, t, s, b, h, e, g, ty, c, mp){
+        super(br, t, s, b, h, e, g, ty);
+        this.camera = c;
+        this.musicPlayer = mp;
+    }
+}
+
+let vehical2 = new Sedancar ("Hundayi", 4, 1, 4, 2, 1, 1,"Sedan", "backcamera", 1)
+console.log(vehical2)
+
+class SuvCar extends Automobile{
+    constructor(br, t, s, b, h, e, g, ty, c, mp, l, w, he){
+        super(br, t, s, b, h, e, g, ty);
+        this.camera = c;
+        this.musicPlayer = mp;
+        this.length = l;
+        this.width = w;
+        this.height = he;
+    }
+}
+
+let vehical3 = new SuvCar ("Mahindra", 4, 1, 4, 2, 1, 1, "SUV", 360, 1, "4695mm", "1890mm", "1755mm")
+console.log(vehical3)
+
+
+
+
+
+
+
+
+
+
+</script>

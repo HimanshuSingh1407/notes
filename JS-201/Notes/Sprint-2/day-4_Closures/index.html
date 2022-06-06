@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 200px;
+        }
+        #movies{
+            height: 200px;
+            width:206px ;
+            border: 1px solid black;
+            border-top: none;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <!-- <input oninput="main()" type="text" id="query"> -->
+    <input oninput="debounceFunction(main, 1000)" type="text" id="query">
+
+    <div id="movies"></div>
+
+</body>
+</html>
+
+<script>
+
+//Step 1 : accept the input
+//Step 2: fetch the data
+//step 3 : append data
+
+let movies_div = document.getElementById('movies');
+
+let id;
+
+async function searchMovies(query){
+    //prepare url
+    let url = `https://www.omdbapi.com/?s=${query}&apikey=d806bd70`;
+
+    try{
+
+        let res = await fetch(url);
+
+        let data = await res.json(); //collect data
+
+        return data.Search;
+
+        //console.log(data)
+
+    } catch (error){
+        console.log('error:', error)
+    }
+
+}
+
+
+async function main(){
+
+let query = document.getElementById("query").value;
+//console.log('query :', query);
+
+let response = searchMovies(query);  // who is returing value
+//console.log('x:', x) //searchMovies is returning a promise, async function, no matter what, returns a promises
+let data  = await response;
+//console.log('data:', data)
+
+appendMovies(data)
+
+}
+
+function appendMovies(movies){
+
+    movies_div.innerHTML = null;
+
+    if(movies== undefined)
+    {
+        return false;
+    }
+
+    movies.forEach(function(el){
+
+        let p = document.createElement('p');
+        p.innerText = el.Title;
+
+        movies_div.append(p);
+    })
+
+}
+
+
+function debounceFunction(func, delay){
+
+    if(id){
+        clearTimeout(id);
+    }
+
+id = setTimeout(function(){
+
+    func();
+}, delay);
+
+}
+
+
+//main('a')-->setTimeout(main,1000,'a')--> id --> data
+//main('av')-->do i have previous timeout id
+//main('ave')-->
+
+
+</script>

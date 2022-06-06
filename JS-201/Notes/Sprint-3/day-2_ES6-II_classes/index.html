@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+<script>
+// to understand the syntex of classes
+
+//why constructor function
+//to avoid DRY
+
+//Traditional way
+/*
+function Person(n){
+        this.name = n;
+        // this.print = function(){
+        //     console.log(this.name)
+        // };
+}
+Person.prototype.print = function(){
+    console.log(this.name)
+};
+
+let p1 = new Person("raju")
+console.log(p1)
+
+ */
+
+//protype inside protype ----->prototype chaining
+
+
+ //by ES6 Classes  (syntex of class)
+ /*
+ class Person{
+    constructor(n){
+        this.name = n
+        // this.print = function(){
+        //     console.log(this.name)
+        // };
+    }
+    print(){
+        console.log(this.name);
+    }
+ }
+
+ let p1 = new Person("raju")
+ console.log(p1)
+ */
+
+ //1. Functional programming
+ /*
+ //let str = "pizza";
+
+ function pizza(){
+    return pizza
+ }
+ let str = pizza();
+*/
+
+ // Append
+/*
+ let div = create('div')
+
+ function create(n){
+     return document.createElement('n')
+ }
+*/
+
+
+ //2. Object oriented programming
+/*
+let recepie = {
+    items : ['butter', 'paneer'],
+    cook : function(){
+        console.log(`cooking ${this.items[0]} ${this.item[1]}`)
+    }
+}
+//recepie.cook();
+*/
+
+
+// We problem:-
+
+//stack :- 
+//stack property--> length, push, pop, peek
+/*
+class Stack{
+    constructor(){
+         this.length = 0;
+         this.stack = []
+    }
+
+    push(el){
+        this.stack[this.length] = el;
+        this.length++;
+    }
+
+    pop(){
+        this.stack.pop();
+        this.length--;
+    }
+
+    peek(){
+       // return this.stack[this.length-1]
+       console.log(this.stack[this.length-1]);
+    }
+}
+
+let stk1 = new Stack ();
+stk1.push(1)
+stk1.push(2)
+stk1.push(3)
+stk1.peek()
+
+console.log(stk1)
+//console.log(stk1.peek())
+stk1.pop()
+console.log(stk1)
+*/
+
+//Inheritance
+
+//tradi --> syntex--> Object.create(),  prototype inheritance
+
+
+class Mobile{      //Blueprint
+    constructor(b, bt){
+        this.brand = b;
+        this.calling = true;
+        this.battery = bt;
+    }
+}
+
+let m1 = new Mobile("Iphone", "5000mh");
+console.log(m1)
+
+class SmartPhone extends Mobile{
+    constructor(b, bt, c, s){
+        super(b, bt);
+        // this.brand = b;
+        // this.calling = true;
+        // this.battery = bt;
+        this.camera = c;
+        this.screenSize = s;
+}
+}
+
+let m2 = new SmartPhone("Iphone", 5000, "20px", "6inch" );
+console.log(m2)
+
+
+
+</script>

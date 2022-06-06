@@ -1,0 +1,35 @@
+body{
+    background-color: aliceblue;
+}
+
+#navbar{
+    height: 80px;
+    /* border: 1px solid red; */
+    margin: auto;
+    background-color: aquamarine;
+    display: flex;
+    justify-content: end;
+}
+#container{
+    height: auto;
+    width: 50%;
+    /* border: 1px solid green; */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#container>h1{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+
+.img{
+    width: 85%;
+    margin: auto;
+}
+
+img{
+    width: 100%;
+}

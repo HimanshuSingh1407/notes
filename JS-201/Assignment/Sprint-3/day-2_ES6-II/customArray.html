@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Array</title>
+</head>
+<body>
+    <h3>Custom Array</h3>
+</body>
+</html>
+
+<script>
+
+class CustomArray{
+    constructor(){
+        this.length = 0;
+        this.array = []
+    }
+
+    push(ele){
+        this.array[this.length] = ele
+        this.length++;
+        //console.log("pushed element :-" + this.array[this.length-1]);  
+    }
+
+    pop(){
+        //console.log("poped element :-" + this.array[this.length-1]);
+        this.array.pop();
+        this.length--;
+    }
+
+    top(){
+        console.log(this.array[this.length-1]);
+    }
+
+    print(){
+        console.log(this.array)
+    }
+
+    printReverse(){
+        console.log(this.array.reverse())
+    }
+
+    size(){
+        console.log(this.array.length)
+    }
+
+}
+
+let arr = new CustomArray();
+
+arr.push(1);
+arr.push(2);
+arr.push(3);
+arr.push(4);
+arr.print()
+//console.log(arr)
+arr.pop();
+//console.log(arr)
+arr.print()
+arr.top();
+arr.print()
+arr.printReverse()
+arr.size()
+
+
+
+
+</script>
